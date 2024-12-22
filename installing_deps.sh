@@ -141,7 +141,7 @@ if [ ! -z "$TRAVIS" ]; then
 fi
 git describe --abbrev=0 --tags | tr -d '\n' > ${AIL_HOME}/update/current_version
 echo "AIL current version:"
-git describe --abbrev=0 --tags
+git describe --abbrev=0 --tags > ${AIL_HOME}/update/current_version || echo "No tags found" > ${AIL_HOME}/update/current_version
 popd
 
 # LAUNCH Kvrocks
